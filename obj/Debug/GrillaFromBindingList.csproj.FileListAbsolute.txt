@@ -1,0 +1,9 @@
+D:\Proyectos\GrillaFromBindingList\GrillaFromBindingList\bin\Debug\GrillaFromBindingList.exe
+D:\Proyectos\GrillaFromBindingList\GrillaFromBindingList\bin\Debug\GrillaFromBindingList.pdb
+D:\Proyectos\GrillaFromBindingList\GrillaFromBindingList\obj\Debug\GrillaFromBindingList.csproj.AssemblyReference.cache
+D:\Proyectos\GrillaFromBindingList\GrillaFromBindingList\obj\Debug\GrillaFromBindingList.Form1.resources
+D:\Proyectos\GrillaFromBindingList\GrillaFromBindingList\obj\Debug\GrillaFromBindingList.Properties.Resources.resources
+D:\Proyectos\GrillaFromBindingList\GrillaFromBindingList\obj\Debug\GrillaFromBindingList.csproj.GenerateResource.cache
+D:\Proyectos\GrillaFromBindingList\GrillaFromBindingList\obj\Debug\GrillaFromBindingList.csproj.CoreCompileInputs.cache
+D:\Proyectos\GrillaFromBindingList\GrillaFromBindingList\obj\Debug\GrillaFromBindingList.exe
+D:\Proyectos\GrillaFromBindingList\GrillaFromBindingList\obj\Debug\GrillaFromBindingList.pdb
