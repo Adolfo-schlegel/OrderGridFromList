@@ -1,4 +1,5 @@
 ﻿using GrillaFromBindingList.Models;
+using GrillaFromBindingList.Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -61,77 +62,7 @@ namespace GrillaFromBindingList
 
 			};
 
-			dataGridView1.DataSource = datos;
-		}
-
-		private void orderDataGrid(string name, int indexOfColumn)
-		{
-			
-			switch (name)
-			{
-				case "nombre":
-					DataGridViewRowCollection rowsnames = dataGridView1.Rows;
-
-					List<string> lst_names = new List<string>();
-
-					for (int i = 0; i < rowsnames.Count; i++)					
-						 lst_names.Add((string)rowsnames[i].Cells[indexOfColumn].Value);
-
-					List<string> orderlist = lst_names.OrderBy(x => x).ToList();
-
-					for (int i = 0; i < rowsnames.Count; i++)
-						dataGridView1.Rows[i].Cells[indexOfColumn].Value = orderlist[i];					
-				break;
-				case "edad":
-					DataGridViewRowCollection rowsages = dataGridView1.Rows;
-
-					List<int> lst_ages = new List<int>();
-
-					for (int i = 0; i < rowsages.Count; i++)
-						lst_ages.Add((int)rowsages[i].Cells[indexOfColumn].Value);
-
-					List<int> orderlistAges = lst_ages.OrderBy(x => x).ToList();
-
-					for (int i = 0; i < rowsages.Count; i++)
-						dataGridView1.Rows[i].Cells[indexOfColumn].Value = orderlistAges[i];
-					break;
-				case "nacimiento":
-					DataGridViewRowCollection rowsborns = dataGridView1.Rows;
-
-					List<DateTime> lst_borns = new List<DateTime>();
-
-					for (int i = 0; i < rowsborns.Count; i++)
-						lst_borns.Add((DateTime)rowsborns[i].Cells[indexOfColumn].Value);
-
-					List<DateTime> orderlistBorns = lst_borns.OrderBy(x => x).ToList();
-
-					for (int i = 0; i < rowsborns.Count; i++)
-						dataGridView1.Rows[i].Cells[indexOfColumn].Value = orderlistBorns[i];
-					break;
-				case "altura":
-					DataGridViewRowCollection rowssices = dataGridView1.Rows;
-
-					List<long> lst_sices = new List<long>();
-
-					for (int i = 0; i < rowssices.Count; i++)
-						lst_sices.Add((long)rowssices[i].Cells[indexOfColumn].Value);
-
-					List<long> orderlistSices = lst_sices.OrderBy(x => x).ToList();
-
-					for (int i = 0; i < rowssices.Count; i++)
-						dataGridView1.Rows[i].Cells[indexOfColumn].Value = orderlistSices[i];
-					break;
-			}
-		}
-
-		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-		{
-			var senderGrid = (DataGridView)sender;
-
-			string selectedColumn = dataGridView1.Columns[e.ColumnIndex].Name;
-			int indexRowOfColumn = dataGridView1.Columns[e.ColumnIndex].Index;
-
-			orderDataGrid(selectedColumn, indexRowOfColumn);
-		}
+			dataGridView1.DataSource = new MySortableBindingList<Datos>(datos);
+		}		
 	}
 }
